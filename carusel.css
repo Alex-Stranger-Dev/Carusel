@@ -1,0 +1,85 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #333;
+  --text: #fff;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--bg);
+}
+
+.container h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  word-spacing: 20px;
+  margin: 20px 0;
+  color: var(--text);
+}
+
+.container .box {
+  width: 950px;
+  height: 750px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.container .box .slide {
+  display: flex;
+  width: 950px;
+  transform: translateX(0%);
+  transition: 0.5s ease-in-out;
+  transform-origin: left;
+}
+
+.container .box .slide img {
+  object-fit: cover;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.container .box button {
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--text);
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: translateY(-50%);
+  z-index: 5;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+
+.container .box button:hover {
+  opacity: 1;
+}
+
+.container .box button.prev {
+  left: 1%;
+}
+
+.container .box button.next {
+  right: 1%;
+}
